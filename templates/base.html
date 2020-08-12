@@ -1,0 +1,23 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Remember{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+
+{% endblock %}
+
+{% block styles -%}
+    {{super()}}
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+{% endblock %}
+
+{% block navbar %}
+  <nav class="navbar navbar-light bg-nav">
+    <a class="navbar-brand" href="{{ url_for('home') }}">
+      <img src="{{ url_for('static', filename='remember-white.png') }}" alt="Remember" width="30" height="30"">
+    </a>
+  </nav>
+{% endblock %}
