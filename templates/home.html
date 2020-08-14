@@ -2,25 +2,51 @@
 
 {% block content %}
 <div class="container-fluid">
-  <h4>Remember Where You Stopped</h4>
+  <h4 class="mt-5 mb-5">Remember Where You Stopped</h4>
   <div class="container">
-    <div class="text-right filter">
-      <form class="" action="">
-        <label for="filter">Filter</label>
-        <select class="custom-select" name="filter" id="filter">
-          <option value="all">All</option>
-          <option value="anime">Anime</option>
-          <option value="English_series">English series</option>
-        </select>
-        <input class="btn btn-info" type="submit" value="Go">
-      </form>
+    <div class="d-flex justify-content-between">
+      <div class=" ">
+        <a class="btn btn-info" href="{{ url_for('add') }}">Add</a>
+      </div>
+      <div class=" filter">
+        <form class="" action="{{ url_for('home') }}" method="POST">
+          <label for="filter">Filter</label>
+          <select class="custom-select" name="filter" id="filter">
+            <option value="all" {% if filter_value == 'all' %} selected="selected" {% endif %}>All</option>
+            <option value="Anime" {% if filter_value == 'Anime' %} selected="selected" {% endif %}>Anime</option>
+            <option value="English series" {% if filter_value == 'English series' %} selected="selected" {% endif %}>English series</option>
+          </select>
+          <input class="btn btn-info" type="submit" value="Go">
+        </form>
+      </div>
     </div>
     <div class="">
-      <ul class="list-group">
-        {% for show in list %}
-          <a class="last_ep" href="#"><li class="list-group-item">Name: {{ show['name'] }} <span class="text-right">last_ep: {{ show['last_ep'] }}</span> <br> Type: {{ show['type'] }} - season: {{ show['season'] }}</li></a>
-        {% endfor %}
-      </ul>
+      {% if list %}
+        <ul class="list-group">
+          {% for show in list %}
+            <div class="show-list">
+              <a class="last_ep" href="{{ url_for('edit') }}">
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <span>Name: </span>{{ show['name'] }}
+                    </div>
+                    <div class="col-sm-3"><span>last episode:</span> {{ show['last_ep'] }}</div>
+                    <div class="col-sm-7">
+                      <span>Type:</span> {{ show['type'] }}
+                    </div>
+                    <div class="col-sm-3">
+                       <span>season:</span> {{ show['season'] }}
+                    </div>
+                  </div>
+                </li>
+              </a>
+            </div>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>The list is empty</p>
+      {% endif %}
     </div>
   </div>
 </div>

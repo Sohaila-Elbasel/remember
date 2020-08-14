@@ -6,17 +6,23 @@
   font-size: 2.3em;
   color: #728ba6;
 }
+.container{
+  margin-bottom: 25px;
+}
 .filter{
   margin-bottom: 10px;
 }
-.text-right .custom-select{
-  padding: 5px;
+.filter .custom-select{
   border: 1px solid #ccc;
   border-radius: 16px;
+  width: 8.5em;
 }
 
 .list-group .last_ep{
   color: black;
+}
+.list-group .list-group-item span{
+  color: #17a2b8;
 }
 .list-group .last_ep:hover{
   color: gray;
