@@ -25,7 +25,7 @@
         <ul class="list-group">
           {% for show in list %}
             <div class="show-list">
-              <a class="last_ep" href="{{ url_for('edit') }}">
+              <a class="last_ep" href="{{ url_for('edit', name=show['name']) }}">
                 <li class="list-group-item">
                   <div class="row">
                     <div class="col-sm-7">

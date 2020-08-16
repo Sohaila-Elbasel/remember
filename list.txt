@@ -1,3 +1,4 @@
 911,English series,2,5
-Bungou stray dogs,Anime,3,8
+Love is war,Anime,2,4
+Bungou stray dogs,Anime,3,9
 Naruto,Anime,1,60
