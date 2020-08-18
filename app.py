@@ -47,7 +47,7 @@ def edit(name):
     else:
         if request.form['action'] == 'Edit':
             if form.validate_on_submit():
-                delete(form.name.data)
+                delete(show['name'])
                 show = form.name.data + ',' + form.type.data + ','+ form.season.data + ',' + form.last_ep.data
                 write_file(show)
                 return redirect(url_for('home'))

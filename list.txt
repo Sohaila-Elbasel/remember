@@ -1,4 +1,5 @@
-911,English series,2,5
-Love is war,Anime,2,4
 Bungou stray dogs,Anime,3,9
 Naruto,Anime,1,60
+Anne with an e,English series,2,2
+911,English series,2,4
+Love is war 2,Anime,2,4
